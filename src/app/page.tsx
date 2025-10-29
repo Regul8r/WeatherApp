@@ -43,7 +43,7 @@ export default function Home() {
         {/* Header */}
         <PageHeader
           title="Weather App"
-          subtitle="Simple weather forecast for your city"
+          subtitle="The weather outside is weather"
         />
 
         {/* Search at the top */}

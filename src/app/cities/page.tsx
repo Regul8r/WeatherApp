@@ -2,6 +2,8 @@ import Link from "next/link";
 import { CITIES } from "../../data/cities";
 import { DUMMY_WEATHER_DATA } from "../../data/weather-data";
 
+
+
 export default function CitiesPage() {
   // Map through all available cities and attach dummy weather data
   const items = CITIES.map((city) => {
@@ -32,10 +34,13 @@ export default function CitiesPage() {
 
         {/* 🌤️ City Cards Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map(({ city, weather }) => (
+          {items.map(({ city, weather }, i) => (
             <div
               key={city.name}
-              className="glass rounded-2xl border border-white/20 p-6 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+              style={{ animationDelay: `${i * 70}ms` }} // 👈 stagger each card
+              className="glass rounded-2xl border border-white/20 p-6 shadow-sm
+                         hover:shadow-lg hover:-translate-y-1 transition
+                         animate-cardIn"
             >
               <h3 className="text-xl font-semibold">{city.name}</h3>
               <p className="text-sm text-black/60 dark:text-gray-400">

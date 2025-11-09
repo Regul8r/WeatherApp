@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { LocationSearch } from "@/components/LocationSearch";
 import { LoadingState } from "@/components/LoadingState";
@@ -25,36 +24,54 @@ export default function Home() {
   const loadCityWeather = (cityName: string) => {
     setLoading(true);
     setError("");
-
     const data = getWeatherData(cityName);
-
     if (data) {
       setWeather(data);
     } else {
       setError(`Failed to load weather data for ${cityName}`);
     }
-
     setLoading(false);
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-zinc-950 px-4 py-12">
-      <main className="w-full max-w-2xl space-y-8">
-        {/* Header */}
-        <PageHeader
-          title="Weather App"
-          subtitle="The weather outside is weather"
-        />
+    <div className="relative flex min-h-screen items-center justify-center animated-gradient-bg px-4 py-12 overflow-hidden">
+      {/* Floating particles in background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="particle" style={{ top: '20%', left: '10%' }}></div>
+        <div className="particle" style={{ top: '60%', left: '80%' }}></div>
+        <div className="particle" style={{ top: '40%', left: '60%' }}></div>
+        <div className="particle" style={{ top: '80%', left: '30%' }}></div>
+      </div>
 
-        {/* Search at the top */}
-        <div className="flex flex-col items-center">
-          <LocationSearch onCitySelect={loadCityWeather} />
+      <main className="relative z-10 w-full max-w-2xl space-y-8">
+        {/* Header with fade-in animation */}
+        <div className="animate-cardIn">
+          <PageHeader
+            title="Weather App"
+            subtitle="The weather outside is weather"
+          />
         </div>
 
-        {/* Weather display */}
-        {loading && <LoadingState />}
-        {error && <ErrorMessage message={error} />}
-        {weather && !loading && <WeatherDisplay weather={weather} />}
+        {/* Search with glow effect and staggered animation */}
+        <div 
+          className="flex flex-col items-center animate-cardIn" 
+          style={{ animationDelay: "150ms" }}
+        >
+          <div className="w-full max-w-md">
+            <LocationSearch onCitySelect={loadCityWeather} />
+          </div>
+        </div>
+
+        {/* Weather display with animation */}
+        <div className="animate-cardIn" style={{ animationDelay: "300ms" }}>
+          {loading && <LoadingState />}
+          {error && <ErrorMessage message={error} />}
+          {weather && !loading && (
+            <div className="space-y-6">
+              <WeatherDisplay weather={weather} />
+            </div>
+          )}
+        </div>
       </main>
     </div>
   );

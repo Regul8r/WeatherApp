@@ -1,16 +1,10 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next"; // 👈 Add this import
 import { getWeatherData } from "@/lib/getWeather";
 import { CITIES } from "@/data/cities";
 import { CurrentWeatherDetail } from "@/components/CurrentWeatherDetail";
 import { ForecastCard } from "@/components/ForecastCard";
 import { Button } from "@/components/ui/Button";
-
-/**
- * Detailed Weather Page
- *
- * Dynamic route that displays comprehensive weather information
- * for a specific city including current conditions and forecast
- */
 
 interface PageProps {
   params: Promise<{
@@ -22,7 +16,6 @@ export default async function WeatherDetailPage({ params }: PageProps) {
   const { location } = await params;
   const cityName = decodeURIComponent(location);
 
-  // Validate city exists in our list
   const cityExists = CITIES.some(
     (c) => c.name.toLowerCase() === cityName.toLowerCase()
   );
@@ -31,7 +24,6 @@ export default async function WeatherDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  // Fetch weather data
   const weather = getWeatherData(cityName);
 
   if (!weather) {
@@ -62,18 +54,23 @@ export default async function WeatherDetailPage({ params }: PageProps) {
           </Button>
         </div>
 
-        {/* Current weather - Large display */}
-        <CurrentWeatherDetail
-          current={weather.current}
-          latitude={weather.latitude}
-          longitude={weather.longitude}
-        />
+        {/* Current weather - Large display with animation */}
+        <div className="animate-cardIn">
+          <CurrentWeatherDetail
+            current={weather.current}
+            latitude={weather.latitude}
+            longitude={weather.longitude}
+          />
+        </div>
 
-        {/* 3-Day Forecast */}
-        <ForecastCard forecast={weather.forecast} />
+        {/* 3-Day Forecast with staggered animation */}
+        <div className="animate-cardIn" style={{ animationDelay: "150ms" }}>
+          <ForecastCard forecast={weather.forecast} />
+        </div>
 
-        {/* Action buttons */}
-        <div className="flex justify-center gap-4">
+
+        {/* Action buttons with staggered animation */}
+        <div className="flex justify-center gap-4 animate-cardIn" style={{ animationDelay: "300ms" }}>
           <Button href="/" variant="default">
             Search Another City
           </Button>
@@ -83,11 +80,10 @@ export default async function WeatherDetailPage({ params }: PageProps) {
   );
 }
 
-// Generate metadata for SEO
-export async function generateMetadata({ params }: PageProps) {
+// 👇 Add the return type here
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { location } = await params;
   const cityName = decodeURIComponent(location);
-
   return {
     title: `${cityName} Weather - Weather App`,
     description: `Detailed weather forecast for ${cityName}`,

@@ -24,7 +24,8 @@ export default async function WeatherDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const weather = getWeatherData(cityName);
+  // Fetch weather data
+const weather = await getWeatherData(cityName);
 
   if (!weather) {
     return (

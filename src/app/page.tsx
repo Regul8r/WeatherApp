@@ -21,16 +21,23 @@ export default function Home() {
     loadCityWeather(DEFAULT_CITY);
   }, []);
 
-  const loadCityWeather = (cityName: string) => {
+  const loadCityWeather = async (cityName: string) => {
     setLoading(true);
     setError("");
-    const data = getWeatherData(cityName);
-    if (data) {
-      setWeather(data);
-    } else {
-      setError(`Failed to load weather data for ${cityName}`);
+    
+    try {
+      const data = await getWeatherData(cityName);
+      if (data) {
+        setWeather(data);
+      } else {
+        setError(`Failed to load weather data for ${cityName}`);
+      }
+    } catch (err) {
+      setError(`Unable to fetch weather data. Please try again.`);
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (

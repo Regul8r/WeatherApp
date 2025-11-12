@@ -17,17 +17,16 @@ export function CurrentWeatherDetail({
       <h2 className="text-2xl font-semibold text-zinc-900 dark:text-white mb-6">
         Current Weather
       </h2>
-
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left side - Main weather */}
         <div className="flex flex-col items-center justify-center space-y-4">
-          <WeatherIcon code={current.condition.code} size="xl" />
+        <WeatherIcon code={current?.condition?.code || 0} isDay={current.isDay} size="xl" />
           <div className="text-center">
             <div className="text-6xl font-bold text-zinc-900 dark:text-white">
               {current.temperature}°F
             </div>
             <p className="text-xl text-zinc-600 dark:text-zinc-400 mt-2">
-              {current.condition.description}
+              {current.condition?.description || "Unknown"}
             </p>
           </div>
         </div>

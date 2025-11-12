@@ -16,12 +16,13 @@ export interface CurrentWeather {
   humidity: number; // percentage
   windSpeed: number; // in mph
   condition: WeatherCondition;
+  isDay: boolean;
 }
 
 export interface DailyForecast {
   date: string; // ISO date string
-  maxTemp: number; // in Fahrenheit
-  minTemp: number; // in Fahrenheit
+  high: number; // in Fahrenheit (max temperature)
+  low: number; // in Fahrenheit (min temperature)
   condition: WeatherCondition;
 }
 

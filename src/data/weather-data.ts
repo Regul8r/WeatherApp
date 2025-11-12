@@ -17,6 +17,7 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       feelsLike: 61,
       humidity: 65,
       windSpeed: 7,
+      isDay: true, 
       condition: {
         code: 2,
         description: "Partly cloudy",
@@ -25,8 +26,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
     forecast: [
       {
         date: new Date(Date.now() + 86400000).toISOString().split("T")[0],
-        maxTemp: 72,
-        minTemp: 57,
+        high: 72, 
+        low: 57, 
         condition: {
           code: 1,
           description: "Mainly clear",
@@ -34,8 +35,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 172800000).toISOString().split("T")[0],
-        maxTemp: 75,
-        minTemp: 61,
+        high: 75,
+        low: 61,
         condition: {
           code: 0,
           description: "Clear sky",
@@ -43,8 +44,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 259200000).toISOString().split("T")[0],
-        maxTemp: 68,
-        minTemp: 59,
+        high: 68,
+        low: 59,
         condition: {
           code: 61,
           description: "Slight rain",
@@ -61,6 +62,7 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       feelsLike: 55,
       humidity: 72,
       windSpeed: 11,
+      isDay: true, 
       condition: {
         code: 3,
         description: "Overcast",
@@ -69,8 +71,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
     forecast: [
       {
         date: new Date(Date.now() + 86400000).toISOString().split("T")[0],
-        maxTemp: 63,
-        minTemp: 54,
+        high: 63,
+        low: 54,
         condition: {
           code: 61,
           description: "Slight rain",
@@ -78,8 +80,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 172800000).toISOString().split("T")[0],
-        maxTemp: 66,
-        minTemp: 55,
+        high: 66,
+        low: 55,
         condition: {
           code: 2,
           description: "Partly cloudy",
@@ -87,8 +89,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 259200000).toISOString().split("T")[0],
-        maxTemp: 70,
-        minTemp: 57,
+        high: 70,
+        low: 57,
         condition: {
           code: 1,
           description: "Mainly clear",
@@ -105,6 +107,7 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       feelsLike: 70,
       humidity: 58,
       windSpeed: 5,
+      isDay: true, 
       condition: {
         code: 1,
         description: "Mainly clear",
@@ -113,8 +116,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
     forecast: [
       {
         date: new Date(Date.now() + 86400000).toISOString().split("T")[0],
-        maxTemp: 77,
-        minTemp: 66,
+        high: 77,
+        low: 66,
         condition: {
           code: 0,
           description: "Clear sky",
@@ -122,8 +125,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 172800000).toISOString().split("T")[0],
-        maxTemp: 79,
-        minTemp: 68,
+        high: 79,
+        low: 68,
         condition: {
           code: 2,
           description: "Partly cloudy",
@@ -131,8 +134,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 259200000).toISOString().split("T")[0],
-        maxTemp: 73,
-        minTemp: 64,
+        high: 73,
+        low: 64,
         condition: {
           code: 63,
           description: "Moderate rain",
@@ -150,6 +153,7 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       feelsLike: 52,
       humidity: 80,
       windSpeed: 12,
+      isDay: true, 
       condition: {
         code: 3,
         description: "Overcast",
@@ -158,8 +162,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
     forecast: [
       {
         date: new Date(Date.now() + 86400000).toISOString().split("T")[0],
-        maxTemp: 58,
-        minTemp: 48,
+        high: 58,
+        low: 48,
         condition: {
           code: 61,
           description: "Slight rain",
@@ -167,8 +171,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 172800000).toISOString().split("T")[0],
-        maxTemp: 60,
-        minTemp: 49,
+        high: 60,
+        low: 49,
         condition: {
           code: 2,
           description: "Partly cloudy",
@@ -176,8 +180,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 259200000).toISOString().split("T")[0],
-        maxTemp: 57,
-        minTemp: 47,
+        high: 57,
+        low: 47,
         condition: {
           code: 1,
           description: "Mainly clear",
@@ -195,6 +199,7 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       feelsLike: 73,
       humidity: 35,
       windSpeed: 7,
+      isDay: true, 
       condition: {
         code: 1,
         description: "Mainly clear",
@@ -203,8 +208,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
     forecast: [
       {
         date: new Date(Date.now() + 86400000).toISOString().split("T")[0],
-        maxTemp: 78,
-        minTemp: 62,
+        high: 78,
+        low: 62,
         condition: {
           code: 0,
           description: "Clear sky",
@@ -212,8 +217,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 172800000).toISOString().split("T")[0],
-        maxTemp: 76,
-        minTemp: 61,
+        high: 76,
+        low: 61,
         condition: {
           code: 2,
           description: "Partly cloudy",
@@ -221,8 +226,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 259200000).toISOString().split("T")[0],
-        maxTemp: 74,
-        minTemp: 60,
+        high: 74,
+        low: 60,
         condition: {
           code: 1,
           description: "Mainly clear",
@@ -240,6 +245,7 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       feelsLike: 64,
       humidity: 60,
       windSpeed: 9,
+      isDay: true, // 👈 Added
       condition: {
         code: 2,
         description: "Partly cloudy",
@@ -248,8 +254,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
     forecast: [
       {
         date: new Date(Date.now() + 86400000).toISOString().split("T")[0],
-        maxTemp: 72,
-        minTemp: 56,
+        high: 72,
+        low: 56,
         condition: {
           code: 1,
           description: "Mainly clear",
@@ -257,8 +263,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 172800000).toISOString().split("T")[0],
-        maxTemp: 70,
-        minTemp: 55,
+        high: 70,
+        low: 55,
         condition: {
           code: 61,
           description: "Slight rain",
@@ -266,8 +272,8 @@ export const DUMMY_WEATHER_DATA: Record<string, WeatherData> = {
       },
       {
         date: new Date(Date.now() + 259200000).toISOString().split("T")[0],
-        maxTemp: 68,
-        minTemp: 54,
+        high: 68,
+        low: 54,
         condition: {
           code: 2,
           description: "Partly cloudy",

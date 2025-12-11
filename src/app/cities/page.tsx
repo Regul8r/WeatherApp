@@ -13,7 +13,7 @@ export default function CitiesPage() {
   });
 
   return (
-    <main className="page-gradient min-h-screen py-12 px-6">
+    <main className="min-h-screen py-12 px-6">
       <div className="mx-auto max-w-6xl">
         {/* 🧭 Navigation */}
         <nav className="mb-8 text-sm">
